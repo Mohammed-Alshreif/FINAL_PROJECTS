@@ -1,0 +1,16 @@
+/*
+ * motor_drive.h
+ *
+ *  Created on: May 24, 2023
+ *      Author: 20102
+ */
+
+#ifndef INC_MOTOR_DRIVE_H_
+#define INC_MOTOR_DRIVE_H_
+#include "STM32_TIMERS_DRIVER.h"
+
+void motor_init();
+void motor_control();
+
+
+#endif /* INC_MOTOR_DRIVE_H_ */

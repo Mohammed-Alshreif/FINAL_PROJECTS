@@ -1,0 +1,96 @@
+/**
+ ******************************************************************************
+ * @file           : main.c
+ * @author         : Mohammed Adel Alshreif
+ * @brief          : artificial foot
+ ******************************************************************************
+ */
+#include "stm32_speed_DRIVER.h"
+#include "STM32_TIMERS_DRIVER.h"
+#include "stm32f103c6_ADC.h"
+#include "stm32f103c6_USART_SRIVER.h"
+//===================================
+#define clk 36000000
+//=============-PID-=================
+const float kp=3 ,kd=3,ki=1;
+float prev_error,error,pid_d,pid_read,integral;
+int
+//===================================
+void motor_control();
+int PID (int target_position,int actual_position);
+//===================================
+//===================================
+//===================================
+//===================================
+//===================================
+//===================================
+//===================================
+//===================================
+//===================================
+
+uint8_t f1;
+int X=0;
+char text[4]={0};
+void intA(){
+	int b = READ_PIN(GPIOA, pin5);
+	if(b > 0){
+		X++;
+	}
+	else{
+		X--;
+	}
+}
+
+int main(void)
+{
+	MCAL_speed_init(CLK_SORC_IN_CLK8MHz, mood_FAST_MOOD_36MHzCORE);
+	PWM(TIM1, CH_3, 70,3500, clk);
+	ADC_INIT(ADC1, ADC_STATE_START);
+	USART_INIT(USART1, mode_RX_TX_ENABLE, word_length_8, stop_bits_1, baud_rate_9600, parity_none,clk);
+	EXTI(GPIOA,pin4,EXTI_Trigger_Rising,intA);
+	while(1){
+
+		pid_read=PID(1000,X);
+		if(pid_read>=5){
+			PWM(TIM1, CH_3,pid_read,3500, clk);
+			PWM(TIM1, CH_1,0,3500, clk);
+		}
+		else if(pid_read<=-2){
+			PWM(TIM1, CH_1,-pid_read,3500, clk);
+			PWM(TIM1, CH_3,0,3500, clk);
+		}
+		else{
+			PWM(TIM1, CH_1,0,3500, clk);
+			PWM(TIM1, CH_3,0,3500, clk);
+		}
+
+		USART_SEND_STRING(USART1,"\n ");
+		delay(5, U_ms, clk);
+		sprintf(text,"%d",X);
+		USART_SEND_STRING(USART1,text);
+		delay(14, U_ms, clk);
+	}
+}
+
+void motor_control(){
+
+}
+
+int PID (int target_position,int actual_position){
+
+	error = target_position - actual_position;
+	pid_d =error - prev_error;
+	integral+=error;
+	pid_res =error * kp + pid_d * kd+integral*ki;
+
+	if(pid_res<-1000){
+		pid_res=-1000;
+	}
+
+	if(pid_res>1000){
+		pid_res=1000;
+	}
+
+	prev_error=error;
+	return pid_res ;
+}

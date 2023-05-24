@@ -1,0 +1,12 @@
+/*
+ * motor_drive.c
+ *
+ *  Created on: May 24, 2023
+ *      Author: 20102
+ */
+
+#include "motor_drive.h"
+
+void motor_init(){
+	MCAL_speed_init(CLK_SORC_IN_CLK8MHz, mood_FAST_MOOD_36MHzCORE);
+}
