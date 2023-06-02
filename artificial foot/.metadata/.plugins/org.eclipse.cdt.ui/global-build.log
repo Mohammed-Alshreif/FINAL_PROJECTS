@@ -2360,3 +2360,2121 @@ Finished building: FINAL_PROJECT_FEET.bin
  
 Finished building: FINAL_PROJECT_FEET.list
  
+21:09:11 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:62:3: warning: implicit declaration of function 'posetion'; did you mean '__section'? [-Wimplicit-function-declaration]
+   posetion (ARR_FORCE_SENSORS);//Motor_POSETION update
+   ^~~~~~~~
+   __section
+../Src/main.c:86:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:89:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c: At top level:
+../Src/main.c:167:6: warning: conflicting types for 'posetion'
+ void posetion (uint8_t* FORC_SENSORS){
+      ^~~~~~~~
+../Src/main.c:62:3: note: previous implicit declaration of 'posetion' was here
+   posetion (ARR_FORCE_SENSORS);//Motor_POSETION update
+   ^~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14260	    140	   1764	  16164	   3f24	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+21:09:43 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14260	    140	   1764	  16164	   3f24	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+21:12:22 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14260	    140	   1764	  16164	   3f24	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+21:16:28 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14260	    140	   1764	  16164	   3f24	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:20:50 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14284	    140	   1764	  16188	   3f3c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+21:21:46 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14284	    140	   1764	  16188	   3f3c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:24:23 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14284	    140	   1764	  16188	   3f3c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+21:24:45 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14260	    140	   1764	  16164	   3f24	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+21:25:34 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14284	    140	   1764	  16188	   3f3c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+20:30:50 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14284	    140	   1764	  16188	   3f3c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+20:34:30 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14292	    140	   1764	  16196	   3f44	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+20:36:41 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:89:21: error: 'FORC_SENSORS' undeclared (first use in this function); did you mean 'ARR_FORCE_SENSORS'?
+   sprintf(text,"%d",FORC_SENSORS[0]);
+                     ^~~~~~~~~~~~
+                     ARR_FORCE_SENSORS
+../Src/main.c:89:21: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+20:37:02 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14060	    140	   1764	  15964	   3e5c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+20:41:46 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14060	    140	   1764	  15964	   3e5c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+20:42:58 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14064	    140	   1764	  15968	   3e60	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+20:43:11 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  13956	    140	   1764	  15860	   3df4	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+20:45:25 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  13956	    140	   1764	  15860	   3df4	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+20:46:22 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  13956	    140	   1764	  15860	   3df4	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+20:48:58 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14284	    140	   1764	  16188	   3f3c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+20:50:47 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14248	    140	   1764	  16152	   3f18	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+20:51:58 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14260	    140	   1764	  16164	   3f24	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+20:52:37 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14264	    140	   1764	  16168	   3f28	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+20:53:39 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14036	    140	   1764	  15940	   3e44	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+20:55:01 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'ADC_READ_SENSORS':
+../Src/main.c:144:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:147:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14044	    140	   1764	  15948	   3e4c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+20:56:54 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'ADC_READ_SENSORS':
+../Src/main.c:144:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:147:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14040	    140	   1764	  15944	   3e48	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+20:58:37 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14264	    140	   1764	  16168	   3f28	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+20:59:01 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14088	    140	   1764	  15992	   3e78	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:00:14 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14072	    140	   1764	  15976	   3e68	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:01:27 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14036	    140	   1764	  15940	   3e44	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:02:35 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:92:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:95:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  13996	    140	   1764	  15900	   3e1c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:03:35 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:92:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:95:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  13992	    140	   1764	  15896	   3e18	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:06:41 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:93:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:96:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14004	    140	   1764	  15908	   3e24	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:08:14 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:93:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:96:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14008	    140	   1764	  15912	   3e28	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:09:52 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:93:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:96:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14004	    140	   1772	  15916	   3e2c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:10:47 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:92:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:95:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  13996	    140	   1772	  15908	   3e24	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:12:49 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14036	    140	   1772	  15948	   3e4c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:13:00 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14036	    140	   1772	  15948	   3e4c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:17:37 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14020	    140	   1772	  15932	   3e3c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:18:24 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14016	    140	   1772	  15928	   3e38	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:20:23 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14056	    140	   1772	  15968	   3e60	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:23:54 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c: In function 'ADC_READ_SENSORS':
+../Src/main.c:137:21: error: 'i' undeclared (first use in this function)
+   ARR_FORCE_SENSORS[i]=ADC_READ(ADC1,i);
+                     ^
+../Src/main.c:137:21: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c: At top level:
+../Src/main.c:149:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+21:24:27 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14020	    140	   1772	  15932	   3e3c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:24:42 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14016	    140	   1772	  15928	   3e38	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:25:13 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14020	    140	   1772	  15932	   3e3c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:26:02 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14020	    140	   1772	  15932	   3e3c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:28:23 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../STM32f103c8_drivers/stm32f103c6_ADC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32f103c8_drivers/stm32f103c6_ADC.d" -MT"STM32f103c8_drivers/stm32f103c6_ADC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32f103c8_drivers/stm32f103c6_ADC.o"
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14020	    140	   1772	  15932	   3e3c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+21:28:34 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14020	    140	   1772	  15932	   3e3c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:32:25 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14020	    140	   1772	  15932	   3e3c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+21:33:51 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14020	    140	   1772	  15932	   3e3c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+21:38:37 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14020	    140	   1772	  15932	   3e3c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:46:07 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../STM32f103c8_drivers/stm32f103c6_ADC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32f103c8_drivers/stm32f103c6_ADC.d" -MT"STM32f103c8_drivers/stm32f103c6_ADC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32f103c8_drivers/stm32f103c6_ADC.o"
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+21:49:17 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../STM32f103c8_drivers/stm32f103c6_ADC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32f103c8_drivers/stm32f103c6_ADC.d" -MT"STM32f103c8_drivers/stm32f103c6_ADC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32f103c8_drivers/stm32f103c6_ADC.o"
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+21:51:45 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../STM32f103c8_drivers/stm32f103c6_ADC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32f103c8_drivers/stm32f103c6_ADC.d" -MT"STM32f103c8_drivers/stm32f103c6_ADC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32f103c8_drivers/stm32f103c6_ADC.o"
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14020	    140	   1772	  15932	   3e3c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+21:51:59 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14020	    140	   1772	  15932	   3e3c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+21:52:12 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14020	    140	   1772	  15932	   3e3c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+21:54:43 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../STM32f103c8_drivers/stm32f103c6_ADC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32f103c8_drivers/stm32f103c6_ADC.d" -MT"STM32f103c8_drivers/stm32f103c6_ADC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32f103c8_drivers/stm32f103c6_ADC.o"
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+21:54:49 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+22:10:51 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+22:12:55 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../STM32f103c8_drivers/stm32f103c6_ADC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32f103c8_drivers/stm32f103c6_ADC.d" -MT"STM32f103c8_drivers/stm32f103c6_ADC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32f103c8_drivers/stm32f103c6_ADC.o"
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+22:13:06 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+22:19:37 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+22:20:51 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+22:21:17 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+22:22:50 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+22:22:55 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+22:24:13 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+22:24:22 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+22:24:24 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+22:25:04 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+22:25:30 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+22:26:05 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+22:26:19 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14012	    140	   1772	  15924	   3e34	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+22:27:25 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14224	    140	   1772	  16136	   3f08	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+22:27:44 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14220	    140	   1772	  16132	   3f04	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+22:41:04 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14220	    140	   1772	  16132	   3f04	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+22:44:10 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14220	    140	   1772	  16132	   3f04	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+22:47:46 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14220	    140	   1772	  16132	   3f04	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+22:59:14 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../STM32f103c8_drivers/stm32f103c6_ADC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32f103c8_drivers/stm32f103c6_ADC.d" -MT"STM32f103c8_drivers/stm32f103c6_ADC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32f103c8_drivers/stm32f103c6_ADC.o"
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14228	    140	   1772	  16140	   3f0c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+22:59:18 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14228	    140	   1772	  16140	   3f0c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+23:01:12 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../STM32f103c8_drivers/stm32f103c6_ADC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32f103c8_drivers/stm32f103c6_ADC.d" -MT"STM32f103c8_drivers/stm32f103c6_ADC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32f103c8_drivers/stm32f103c6_ADC.o"
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14228	    140	   1772	  16140	   3f0c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+23:01:25 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14228	    140	   1772	  16140	   3f0c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+23:01:55 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14228	    140	   1772	  16140	   3f0c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+23:01:58 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14228	    140	   1772	  16140	   3f0c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+23:04:57 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../STM32f103c8_drivers/stm32f103c6_ADC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32f103c8_drivers/stm32f103c6_ADC.d" -MT"STM32f103c8_drivers/stm32f103c6_ADC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32f103c8_drivers/stm32f103c6_ADC.o"
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14228	    140	   1772	  16140	   3f0c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+23:05:01 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14228	    140	   1772	  16140	   3f0c	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+23:07:06 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../STM32f103c8_drivers/stm32f103c6_ADC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32f103c8_drivers/stm32f103c6_ADC.d" -MT"STM32f103c8_drivers/stm32f103c6_ADC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32f103c8_drivers/stm32f103c6_ADC.o"
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14220	    140	   1772	  16132	   3f04	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+23:19:00 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../STM32f103c8_drivers/stm32f103c6_ADC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32f103c8_drivers/stm32f103c6_ADC.d" -MT"STM32f103c8_drivers/stm32f103c6_ADC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32f103c8_drivers/stm32f103c6_ADC.o"
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14240	    140	   1772	  16152	   3f18	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+23:19:40 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../STM32f103c8_drivers/stm32f103c6_ADC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32f103c8_drivers/stm32f103c6_ADC.d" -MT"STM32f103c8_drivers/stm32f103c6_ADC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32f103c8_drivers/stm32f103c6_ADC.o"
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14232	    140	   1772	  16144	   3f10	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+23:22:07 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../STM32f103c8_drivers/stm32f103c6_ADC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32f103c8_drivers/stm32f103c6_ADC.d" -MT"STM32f103c8_drivers/stm32f103c6_ADC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32f103c8_drivers/stm32f103c6_ADC.o"
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14232	    140	   1772	  16144	   3f10	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+23:24:54 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14232	    140	   1772	  16144	   3f10	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+23:26:36 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14232	    140	   1772	  16144	   3f10	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+23:36:50 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../STM32f103c8_drivers/stm32f103c6_ADC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32f103c8_drivers/stm32f103c6_ADC.d" -MT"STM32f103c8_drivers/stm32f103c6_ADC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32f103c8_drivers/stm32f103c6_ADC.o"
+../STM32f103c8_drivers/stm32f103c6_ADC.c: In function 'ADC_READ':
+../STM32f103c8_drivers/stm32f103c6_ADC.c:77:20: error: expected expression before '|' token
+   ADCx->ADC_SQR3 = |(ADC_pin << 0);
+                    ^
+make: *** [STM32f103c8_drivers/subdir.mk:82: STM32f103c8_drivers/stm32f103c6_ADC.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+23:37:01 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../STM32f103c8_drivers/stm32f103c6_ADC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32f103c8_drivers/stm32f103c6_ADC.d" -MT"STM32f103c8_drivers/stm32f103c6_ADC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32f103c8_drivers/stm32f103c6_ADC.o"
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14252	    140	   1772	  16164	   3f24	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+23:37:41 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14252	    140	   1772	  16164	   3f24	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+23:39:21 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../STM32f103c8_drivers/stm32f103c6_ADC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32f103c8_drivers/stm32f103c6_ADC.d" -MT"STM32f103c8_drivers/stm32f103c6_ADC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32f103c8_drivers/stm32f103c6_ADC.o"
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14264	    140	   1772	  16176	   3f30	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 
+23:39:25 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14264	    140	   1772	  16176	   3f30	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+23:41:15 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14264	    140	   1772	  16176	   3f30	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+23:41:20 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14264	    140	   1772	  16176	   3f30	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+23:48:00 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14264	    140	   1772	  16176	   3f30	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+23:54:02 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14264	    140	   1772	  16176	   3f30	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+23:56:23 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,"\n ");
+                            ^~~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+../Src/main.c:90:28: warning: pointer targets in passing argument 2 of 'USART_SEND_STRING' differ in signedness [-Wpointer-sign]
+   USART_SEND_STRING(USART1,text);
+                            ^~~~
+In file included from ../Src/main.c:11:0:
+C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc/stm32f103c6_USART_SRIVER.h:114:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void USART_SEND_STRING(USART_typeDef* USARTx,uint8_t* data);
+      ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "FINAL_PROJECT_FEET.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\E\embedded\test\final simulation code for my assignments\artificial foot\FINAL_PROJECT_FEET\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FINAL_PROJECT_FEET.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FINAL_PROJECT_FEET.axf
+ 
+arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
+arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
+arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
+   text	   data	    bss	    dec	    hex	filename
+  14264	    140	   1772	  16176	   3f30	FINAL_PROJECT_FEET.axf
+Finished building: default.size.stdout
+ 
+Finished building: FINAL_PROJECT_FEET.bin
+ 
+Finished building: FINAL_PROJECT_FEET.list
+ 

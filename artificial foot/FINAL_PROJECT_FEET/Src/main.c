@@ -12,6 +12,7 @@
 //===================================
 #define clk 36000000
 #define max_speed 900  //from 0-->1000 note do not increase it above 1000
+#define _FORCE 1500   // range of ADC of FORCE_SENSOR from 0 to 4000
 //=============-PID-=================
 const float kp=3 ,kd=3,ki=0;
 float prev_error,error,pid_d,pid_read,integral;
@@ -19,22 +20,21 @@ int pid_res;
 //===================================
 int PID (int target_position,int actual_position);//pid function
 void intA();                                      // Encoder isr function
-void ADC_READ_SENSORS(uint8_t* FORC_SENSORS);
+void ADC_READ_SENSORS(void);
+void posetion (void);
 //===================================
 uint32_t Motor_POSETION ;
 //===================================
 int X=0;
 char text[4]={0};
+//===========FORCE_SENSORS===========
+uint16_t ARR_FORCE_SENSORS[3];
 //===================================
 //===================================
 //===================================
 //===================================
 //===================================
 //===================================
-//===================================
-
-
-
 
 int main(void)
 {
@@ -51,20 +51,39 @@ int main(void)
 
 	while(1){
 
-		pid_read=PID(4000,X);
-		if(pid_read>=2){
+		//*******************************************************
+		//================== ADC READ FORC SENSORS ==============
+		//*******************************************************
+		ADC_READ_SENSORS();
+
+		//*******************************************************
+		//====================== POSETION MODE ==================
+		//*******************************************************
+
+		posetion();//Motor_POSETION update
+
+		//*******************************************************
+		//===================== -PID-LOGIC ======================
+		//*******************************************************
+		pid_read=PID(Motor_POSETION,X);
+		if(pid_read>=2){//right control
 			PWM(TIM1, CH_3,pid_read,3500, clk);
 			PWM(TIM1, CH_1,0,3500, clk);
 		}
-		else if(pid_read<=-2){
+		else if(pid_read<=-2){//left control
 			PWM(TIM1, CH_1,-pid_read,3500, clk);
 			PWM(TIM1, CH_3,0,3500, clk);
 		}
-		else{
+		else{//stop range
 			PWM(TIM1, CH_1,0,3500, clk);
 			PWM(TIM1, CH_3,0,3500, clk);
 		}
 
+
+		//analysis
+		//*******************************************************
+		//==================-SEND_ANALYSIS- =====================
+		//*******************************************************
 		USART_SEND_STRING(USART1,"\n ");
 		delay(4, U_ms, clk);
 		sprintf(text,"%d",X);
@@ -72,6 +91,8 @@ int main(void)
 		delay(14, U_ms, clk);
 	}
 }
+
+
 
 //*******************************************************
 //===================== -PID- ===========================
@@ -111,29 +132,49 @@ void intA(){
 //*******************************************************
 //================== ADC READ FORC SENSORS ==============
 //*******************************************************
-void ADC_READ_SENSORS(uint8_t* FORC_SENSORS){
-	for(int i=0;i<3;i++){
-		uint8_t adcpin=0;
-		switch (i) {
-		case 0:
-			adcpin=ADC_pin_PA0;
-			break;
-		case 1:
-			adcpin=ADC_pin_PA1;
-			break;
-		case 2:
-			adcpin=ADC_pin_PA2;
-			break;
-		default:
-			break;
+void ADC_READ_SENSORS(){
+
+	for(uint8_t i=0;i<3;i++){
+		ARR_FORCE_SENSORS[i]=ADC_READ(ADC1,i);
+
+		//transform from ADC range =0 --> 4000 to 0 or 1 range
+		if(ARR_FORCE_SENSORS[i]>_FORCE){
+			ARR_FORCE_SENSORS[i]=1;
 		}
-		FORC_SENSORS[i]=ADC_READ(ADC1,adcpin);
+		else{
+			ARR_FORCE_SENSORS[i]=0;
+		}
 	}
 }
 //*******************************************************
 //====================== POSETION MODE ==================
 //*******************************************************
 
-void posetion (uint8_t* FORC_SENSORS){
+void posetion (){
 
+	uint8_t state=(0b0000111)&(ARR_FORCE_SENSORS[0]|(ARR_FORCE_SENSORS[1]<<1)|(ARR_FORCE_SENSORS[2]<<2));
+	//EX-0b00000111
+	switch (state) {
+	case 0b000:
+		Motor_POSETION=0;
+		break;
+	case 0b001:
+		Motor_POSETION=200;
+		break;
+	case 0b011:
+		Motor_POSETION=400;
+		break;
+	case 0b111:
+		Motor_POSETION=600;
+		break;
+	case 0b110:
+		Motor_POSETION=700;
+		break;
+	case 0b100:
+		Motor_POSETION=800;
+		break;
+	default :
+		Motor_POSETION=Motor_POSETION;
+		break;
+	}
 }

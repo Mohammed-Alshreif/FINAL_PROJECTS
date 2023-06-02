@@ -1,0 +1,183 @@
+/**
+ ******************************************************************************
+ * @file           : main.c
+ * @author         : Mohammed Adel Alshreif
+ * @brief          : artificial foot
+ ******************************************************************************
+ */
+#include "stm32_speed_DRIVER.h"
+#include "STM32_TIMERS_DRIVER.h"
+#include "stm32f103c6_ADC.h"
+#include "stm32f103c6_USART_SRIVER.h"
+//===================================
+#define clk 36000000
+#define max_speed 900  //from 0-->1000 note do not increase it above 1000
+#define _FORCE 200   // range of ADC of FORCE_SENSOR from 0 to 4000
+//=============-PID-=================
+const float kp=3 ,kd=3,ki=0;
+float prev_error,error,pid_d,pid_read,integral;
+int pid_res;
+//===================================
+int PID (int target_position,int actual_position);//pid function
+void intA();                                      // Encoder isr function
+void ADC_READ_SENSORS(void);
+void posetion (void);
+//===================================
+uint32_t Motor_POSETION ;
+//===================================
+int X=0;
+char text[4]={0};
+//===========FORCE_SENSORS===========
+uint16_t ARR_FORCE_SENSORS[3];
+//===================================
+//===================================
+//===================================
+//===================================
+//===================================
+//===================================
+
+int main(void)
+{
+	//*******************************************************
+	//===================== INIT ===========================
+	//*******************************************************
+	MCAL_speed_init(CLK_SORC_IN_CLK8MHz, mood_FAST_MOOD_36MHzCORE);//speed of CPU to 36MHz
+	ADC_INIT(ADC1, ADC_STATE_START);// init ADC
+	USART_INIT(USART1, mode_RX_TX_ENABLE, word_length_8, stop_bits_1, baud_rate_9600, parity_none,clk);
+	EXTI(GPIOA,pin4,EXTI_Trigger_Rising,intA);// INIT external interrupt to encoder
+	//*******************************************************
+	//===================== WHILE ===========================
+	//*******************************************************
+
+	while(1){
+
+		//*******************************************************
+		//================== ADC READ FORC SENSORS ==============
+		//*******************************************************
+		ADC_READ_SENSORS();
+
+		//*******************************************************
+		//====================== POSETION MODE ==================
+		//*******************************************************
+
+		//posetion();//Motor_POSETION update
+
+		//*******************************************************
+		//===================== -PID-LOGIC ======================
+		//*******************************************************
+		pid_read=PID(Motor_POSETION,X);
+		if(pid_read>=2){//right control
+			PWM(TIM1, CH_3,pid_read,3500, clk);
+			PWM(TIM1, CH_1,0,3500, clk);
+		}
+		else if(pid_read<=-2){//left control
+			PWM(TIM1, CH_1,-pid_read,3500, clk);
+			PWM(TIM1, CH_3,0,3500, clk);
+		}
+		else{//stop range
+			PWM(TIM1, CH_1,0,3500, clk);
+			PWM(TIM1, CH_3,0,3500, clk);
+		}
+
+
+		//analysis
+		//*******************************************************
+		//==================-SEND_ANALYSIS- =====================
+		//*******************************************************
+		USART_SEND_STRING(USART1,"\n ");
+		delay(4, U_ms, clk);
+		sprintf(text,"%d",ARR_FORCE_SENSORS[2]);
+		USART_SEND_STRING(USART1,text);
+		delay(14, U_ms, clk);
+	}
+}
+
+
+
+//*******************************************************
+//===================== -PID- ===========================
+//*******************************************************
+int PID (int target_position,int actual_position){
+
+	error = target_position - actual_position;
+	pid_d =error - prev_error;
+	integral+=error;
+	pid_res =error * kp + pid_d * kd+integral*ki;
+
+	if(pid_res<-max_speed){
+		pid_res=-max_speed;
+	}
+
+	if(pid_res>max_speed){
+		pid_res=max_speed;
+	}
+
+	prev_error=error;
+	return pid_res ;
+}
+
+
+//*******************************************************
+//===================== encoder ISR =====================
+//*******************************************************
+void intA(){
+	int b = READ_PIN(GPIOA, pin5);
+	if(b > 0){
+		X++;
+	}
+	else{
+		X--;
+	}
+}
+//*******************************************************
+//================== ADC READ FORC SENSORS ==============
+//*******************************************************
+void ADC_READ_SENSORS(){
+
+	for(uint8_t i=1;i<=3;i++){
+
+		ARR_FORCE_SENSORS[i]=ADC_READ(ADC1,i);
+		//transform from ADC range =0 --> 4000 to 0 or 1 range
+
+//			if(ARR_FORCE_SENSORS[i]>_FORCE){
+//				ARR_FORCE_SENSORS[i]=1;
+//			}
+//			else{
+//				ARR_FORCE_SENSORS[i]=0;
+//			}
+
+
+	}
+}
+//*******************************************************
+//====================== POSETION MODE ==================
+//*******************************************************
+
+void posetion (){
+
+	uint8_t state=(0b0000111)&(ARR_FORCE_SENSORS[0]|(ARR_FORCE_SENSORS[1]<<1)|(ARR_FORCE_SENSORS[2]<<2));
+
+	switch (state) {
+	case 0b000:
+		Motor_POSETION=0;
+		break;
+	case 0b001:
+		Motor_POSETION=200;
+		break;
+	case 0b011:
+		Motor_POSETION=400;
+		break;
+	case 0b111:
+		Motor_POSETION=600;
+		break;
+	case 0b110:
+		Motor_POSETION=700;
+		break;
+	case 0b100:
+		Motor_POSETION=800;
+		break;
+	default :
+		Motor_POSETION=Motor_POSETION;
+		break;
+	}
+}
