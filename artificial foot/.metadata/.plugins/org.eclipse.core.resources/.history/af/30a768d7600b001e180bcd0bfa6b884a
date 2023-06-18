@@ -27,7 +27,6 @@ void LIMIT_UP(void);
 void Calibration(void);
 //===================================
 uint32_t Motor_POSETION ;
-uint8_t flag1,flag2;
 //===================================
 int X=0;
 char text[4]={0};
@@ -65,27 +64,19 @@ int main(void)
 		//=======================- SAFTY - =====================
 		//*******************************************************
 
-		if((READ_PIN(GPIOB, pin11)==0)&&(flag1==0)){//limit down
+		if(READ_PIN(GPIOB, pin11)==0){//limit down
 			PWM(TIM1, CH_3,0,3500, clk);//motor stop
 			PWM(TIM1, CH_1,0,3500, clk);
 			X=0;
 			Motor_POSETION=0;
-			flag1=1;
 		}
-		else if((READ_PIN(GPIOB, pin10)==0)&&(flag2==0)){//limit up
+		else if(READ_PIN(GPIOB, pin10)==0){//limit up
 			PWM(TIM1, CH_3,0,3500, clk);//motor stop
 			PWM(TIM1, CH_1,0,3500, clk);
 			Calibration();
-			flag2=1;
 		}
 		else{
 
-			if((READ_PIN(GPIOB, pin11)==1)){
-				flag1=0;
-			}
-			if((READ_PIN(GPIOB, pin10)==1)){
-				flag2=0;
-			}
 			//*******************************************************
 			//================== ADC READ FORC SENSORS ==============
 			//*******************************************************
@@ -223,8 +214,8 @@ void posetion (){
 //*******************************************************
 
 void Calibration(){
-	PWM(TIM1, CH_3,0,3500, clk);//go down
-	PWM(TIM1, CH_1,500,3500, clk);
+	PWM(TIM1, CH_3,500,3500, clk);//go down
+	PWM(TIM1, CH_1,0,3500, clk);
 	while(READ_PIN(GPIOB, pin11));
 	PWM(TIM1, CH_3,0,3500, clk);//stop
 	PWM(TIM1, CH_1,0,3500, clk);

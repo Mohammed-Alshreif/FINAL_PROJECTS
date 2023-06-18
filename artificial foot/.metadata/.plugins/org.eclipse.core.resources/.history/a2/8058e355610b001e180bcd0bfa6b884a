@@ -80,12 +80,8 @@ int main(void)
 		}
 		else{
 
-			if((READ_PIN(GPIOB, pin11)==1)){
-				flag1=0;
-			}
-			if((READ_PIN(GPIOB, pin10)==1)){
-				flag2=0;
-			}
+			flag1=0;
+			flag2=0;
 			//*******************************************************
 			//================== ADC READ FORC SENSORS ==============
 			//*******************************************************
@@ -223,8 +219,8 @@ void posetion (){
 //*******************************************************
 
 void Calibration(){
-	PWM(TIM1, CH_3,0,3500, clk);//go down
-	PWM(TIM1, CH_1,500,3500, clk);
+	PWM(TIM1, CH_3,500,3500, clk);//go down
+	PWM(TIM1, CH_1,0,3500, clk);
 	while(READ_PIN(GPIOB, pin11));
 	PWM(TIM1, CH_3,0,3500, clk);//stop
 	PWM(TIM1, CH_1,0,3500, clk);

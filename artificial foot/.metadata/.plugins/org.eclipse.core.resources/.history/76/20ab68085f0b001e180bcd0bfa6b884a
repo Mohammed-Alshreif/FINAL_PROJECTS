@@ -27,7 +27,6 @@ void LIMIT_UP(void);
 void Calibration(void);
 //===================================
 uint32_t Motor_POSETION ;
-uint8_t flag1,flag2;
 //===================================
 int X=0;
 char text[4]={0};
@@ -61,74 +60,63 @@ int main(void)
 	//*******************************************************
 
 	while(1){
+
+		//*******************************************************
+		//================== ADC READ FORC SENSORS ==============
+		//*******************************************************
+		ADC_READ_SENSORS();
+
+		//*******************************************************
+		//====================== POSETION MODE ==================
+		//*******************************************************
+
+		posetion();//Motor_POSETION update
+
+		//*******************************************************
+		//===================== -PID-LOGIC ======================
+		//*******************************************************
+		pid_read=PID(Motor_POSETION,X);
+		if(pid_read>=2){//right control
+			PWM(TIM1, CH_3,pid_read,3500, clk);
+			PWM(TIM1, CH_1,0,3500, clk);
+		}
+		else if(pid_read<=-2){//left control
+			PWM(TIM1, CH_1,-pid_read,3500, clk);
+			PWM(TIM1, CH_3,0,3500, clk);
+		}
+		else{//stop range
+			PWM(TIM1, CH_1,0,3500, clk);
+			PWM(TIM1, CH_3,0,3500, clk);
+		}
+
+
+		//analysis
+		//*******************************************************
+		//==================-SEND_ANALYSIS- =====================
+		//*******************************************************
+		USART_SEND_STRING(USART1,"\n ");
+		delay(4, U_ms, clk);
+		sprintf(text,"%d",X);
+		USART_SEND_STRING(USART1,text);
+		delay(14, U_ms, clk);
+
 		//*******************************************************
 		//=======================- SAFTY - =====================
 		//*******************************************************
 
-		if((READ_PIN(GPIOB, pin11)==0)&&(flag1==0)){//limit down
+		if(READ_PIN(GPIOB, pin11)){//limit down
 			PWM(TIM1, CH_3,0,3500, clk);//motor stop
 			PWM(TIM1, CH_1,0,3500, clk);
 			X=0;
 			Motor_POSETION=0;
-			flag1=1;
 		}
-		else if((READ_PIN(GPIOB, pin10)==0)&&(flag2==0)){//limit up
+		else if(READ_PIN(GPIOB, pin10)){//limit up
 			PWM(TIM1, CH_3,0,3500, clk);//motor stop
 			PWM(TIM1, CH_1,0,3500, clk);
 			Calibration();
-			flag2=1;
 		}
-		else{
 
-			if((READ_PIN(GPIOB, pin11)==1)){
-				flag1=0;
-			}
-			if((READ_PIN(GPIOB, pin10)==1)){
-				flag2=0;
-			}
-			//*******************************************************
-			//================== ADC READ FORC SENSORS ==============
-			//*******************************************************
-			ADC_READ_SENSORS();
-
-			//*******************************************************
-			//====================== POSETION MODE ==================
-			//*******************************************************
-
-			posetion();//Motor_POSETION update
-
-			//*******************************************************
-			//===================== -PID-LOGIC ======================
-			//*******************************************************
-			pid_read=PID(Motor_POSETION,X);
-			if(pid_read>=2){//right control
-				PWM(TIM1, CH_3,pid_read,3500, clk);
-				PWM(TIM1, CH_1,0,3500, clk);
-			}
-			else if(pid_read<=-2){//left control
-				PWM(TIM1, CH_1,-pid_read,3500, clk);
-				PWM(TIM1, CH_3,0,3500, clk);
-			}
-			else{//stop range
-				PWM(TIM1, CH_1,0,3500, clk);
-				PWM(TIM1, CH_3,0,3500, clk);
-			}
-
-
-			//analysis
-			//*******************************************************
-			//==================-SEND_ANALYSIS- =====================
-			//*******************************************************
-			USART_SEND_STRING(USART1,"\n ");
-			delay(4, U_ms, clk);
-			sprintf(text,"%d",X);
-			USART_SEND_STRING(USART1,text);
-			delay(14, U_ms, clk);
-
-
-
-			//===========================================================
-		}
+		//===========================================================
 	}
 }
 
@@ -223,8 +211,8 @@ void posetion (){
 //*******************************************************
 
 void Calibration(){
-	PWM(TIM1, CH_3,0,3500, clk);//go down
-	PWM(TIM1, CH_1,500,3500, clk);
+	PWM(TIM1, CH_3,500,3500, clk);//go down
+	PWM(TIM1, CH_1,0,3500, clk);
 	while(READ_PIN(GPIOB, pin11));
 	PWM(TIM1, CH_3,0,3500, clk);//stop
 	PWM(TIM1, CH_1,0,3500, clk);
