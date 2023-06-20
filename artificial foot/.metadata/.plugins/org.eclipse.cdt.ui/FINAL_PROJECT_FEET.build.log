@@ -1,4 +1,4 @@
-11:59:10 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
+12:22:22 **** Incremental Build of configuration Debug for project FINAL_PROJECT_FEET ****
 make -j16 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DDEBUG -c -I../Inc -I"C:/E/embedded/test/final simulation code for my assignments/artificial foot/FINAL_PROJECT_FEET/STM32f103c8_drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
 ../Src/main.c: In function 'main':
@@ -23,7 +23,7 @@ arm-none-eabi-objdump -h -S  FINAL_PROJECT_FEET.axf  > "FINAL_PROJECT_FEET.list"
 arm-none-eabi-objcopy  -O binary  FINAL_PROJECT_FEET.axf  "FINAL_PROJECT_FEET.bin"
 arm-none-eabi-size   FINAL_PROJECT_FEET.axf 
    text	   data	    bss	    dec	    hex	filename
-  14612	    144	   1776	  16532	   4094	FINAL_PROJECT_FEET.axf
+  14600	    144	   1776	  16520	   4088	FINAL_PROJECT_FEET.axf
 Finished building: default.size.stdout
  
 Finished building: FINAL_PROJECT_FEET.bin
@@ -31,5 +31,5 @@ Finished building: FINAL_PROJECT_FEET.bin
 Finished building: FINAL_PROJECT_FEET.list
  
 
-11:59:12 Build Finished. 0 errors, 2 warnings. (took 2s.72ms)
+12:22:24 Build Finished. 0 errors, 2 warnings. (took 1s.725ms)
 

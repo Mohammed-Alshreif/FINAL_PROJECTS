@@ -693,3 +693,15 @@
 2023-06-18 10:11:02,856 [INFO] RetryExec:113 - Retrying request to {s}->https://download.eclipse.org:443
 2023-06-18 10:11:03,593 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://archive.eclipse.org:443: The target server failed to respond
 2023-06-18 10:11:03,593 [INFO] RetryExec:113 - Retrying request to {s}->https://archive.eclipse.org:443
+2023-06-18 17:18:28,023 [INFO] Activator:178 - 
+
+
+2023-06-18 17:18:28,028 [INFO] Activator:179 - !SESSION log4j initialized
+2023-06-18 17:19:27,768 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://download.eclipse.org:443: The target server failed to respond
+2023-06-18 17:19:27,770 [INFO] RetryExec:113 - Retrying request to {s}->https://download.eclipse.org:443
+2023-06-18 17:19:28,515 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://archive.eclipse.org:443: The target server failed to respond
+2023-06-18 17:19:28,516 [INFO] RetryExec:113 - Retrying request to {s}->https://archive.eclipse.org:443
+2023-06-19 11:37:27,887 [INFO] Activator:178 - 
+
+
+2023-06-19 11:37:27,895 [INFO] Activator:179 - !SESSION log4j initialized

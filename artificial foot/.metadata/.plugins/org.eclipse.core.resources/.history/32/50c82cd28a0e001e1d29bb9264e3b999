@@ -198,8 +198,14 @@ void posetion (){
 	case 0b000:
 		Motor_POSETION=0;
 		break;
+	case 0b001:
+		Motor_POSETION=200;
+		break;
+	case 0b011:
+		Motor_POSETION=400;
+		break;
 	case 0b111:
-		Motor_POSETION=2900;
+		Motor_POSETION=2700;
 		break;
 	case 0b110:
 		Motor_POSETION=720;
